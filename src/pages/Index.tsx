@@ -3,7 +3,6 @@ import { Hero } from "@/components/vivia/Hero";
 import { Problem } from "@/components/vivia/Problem";
 import { Solution } from "@/components/vivia/Solution";
 import { Features } from "@/components/vivia/Features";
-import { Gallery } from "@/components/vivia/Gallery";
 import { CTA } from "@/components/vivia/CTA";
 import { Footer } from "@/components/vivia/Footer";
 
@@ -15,7 +14,6 @@ const Index = () => {
       <Problem />
       <Features />
       <Solution />
-      <Gallery />
       <CTA />
       <Footer />
     </main>

@@ -5,7 +5,6 @@ import { Download } from "lucide-react";
 const links = [
   { href: "#funcionalidades", label: "Funcionalidades" },
   { href: "#solucion", label: "La Solución" },
-  { href: "#galeria", label: "Galería" },
 ];
 
 export const Navbar = () => {
