@@ -16,10 +16,10 @@ const points = [
 ];
 
 const solutionImages = [
-  "/Screenshot_20260415-190441.png",
-  "/Screenshot_20260415-190508.png",
-  "/Screenshot_20260415-190529.png",
-  "/Screenshot_20260415-190544.png",
+  `${import.meta.env.BASE_URL}Screenshot_20260415-190441.png`,
+  `${import.meta.env.BASE_URL}Screenshot_20260415-190508.png`,
+  `${import.meta.env.BASE_URL}Screenshot_20260415-190529.png`,
+  `${import.meta.env.BASE_URL}Screenshot_20260415-190544.png`,
 ];
 
 export const Solution = () => {

@@ -40,16 +40,16 @@ export const Hero = () => {
         <div className="relative mx-auto mt-16 grid max-w-6xl grid-cols-1 items-end gap-4 md:grid-cols-3">
           <PhoneFrame 
             className="md:translate-y-8" 
-            image="/Screenshot_20260415-190333.png" 
+            image={`${import.meta.env.BASE_URL}Screenshot_20260415-190333.png`} 
           />
           <PhoneFrame 
             className="md:-translate-y-4 md:scale-110 z-10" 
-            image="/Screenshot_20260415-190400.png" 
+            image={`${import.meta.env.BASE_URL}Screenshot_20260415-190400.png`} 
             featured 
           />
           <PhoneFrame 
             className="md:translate-y-8" 
-            image="/Screenshot_20260415-190408.png" 
+            image={`${import.meta.env.BASE_URL}Screenshot_20260415-190408.png`} 
           />
         </div>
       </div>
