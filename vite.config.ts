@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/vivia-your-next-home-found./",
   server: {
     host: "::",
     port: 8080,
