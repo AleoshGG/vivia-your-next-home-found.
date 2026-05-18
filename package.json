@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://AleoshGG.github.io/vivia-your-next-home-found./",
+  "homepage": "https://propuesta.aleosh.online",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
