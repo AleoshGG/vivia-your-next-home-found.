@@ -23,11 +23,11 @@ export const Navbar = () => {
             </a>
           ))}
         </nav>
-        <Button size="sm" className="rounded-full bg-ink text-ink-foreground hover:bg-ink/90 gap-2">
+        {/* <Button size="sm" className="rounded-full bg-ink text-ink-foreground hover:bg-ink/90 gap-2">
           <Download className="h-4 w-4" />
           <span className="hidden sm:inline">Descargar App</span>
           <span className="sm:hidden">Descargar</span>
-        </Button>
+        </Button> */}
       </div>
     </header>
   );

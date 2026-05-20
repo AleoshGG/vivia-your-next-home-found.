@@ -1,63 +1,83 @@
 import {
   Fingerprint,
-  KeyRound,
-  Route,
-  Save,
-  Camera,
-  Building2,
-  UserPlus,
-  BellRing,
-  CloudUpload,
-  LayoutGrid,
+  Search,
   MessageCircle,
-  SlidersHorizontal,
+  Building2,
+  Sparkles,
+  ShieldCheck,
+  Zap,
 } from "lucide-react";
 
 const features = [
-  { icon: Fingerprint, title: "Autenticación Biométrica", text: "Acceso seguro con huella o reconocimiento facial." },
-  { icon: KeyRound, title: "Persistencia de Sesión", text: "Mantén tu sesión activa con guardado seguro de credenciales." },
-  { icon: Route, title: "Enrutamiento por Roles", text: "Inicio personalizado según seas Arrendador o Arrendatario." },
-  { icon: Save, title: "Guardado de Progreso", text: "Tus formularios se guardan localmente. Cero pérdida de datos." },
-  { icon: Camera, title: "Cámara Integrada", text: "Captura fotos de propiedades directo desde tu dispositivo." },
-  { icon: Building2, title: "Gestión de Propiedades", text: "Publica, edita y visualiza inmuebles en renta o venta." },
-  { icon: UserPlus, title: "Sistema de Seguimiento", text: "Sigue a tus arrendadores favoritos y monitorea su actividad." },
-  { icon: BellRing, title: "Notificaciones Push", text: "Entérate al instante cuando se publique una nueva propiedad." },
-  { icon: CloudUpload, title: "Sincronización Inteligente", text: "Sube fotos en alta resolución solo con red estable." },
-  { icon: LayoutGrid, title: "Renderizado Optimizado", text: "Visualización fluida de inmuebles y sus características." },
-  { icon: MessageCircle, title: "Contacto Directo", text: "Enlace inmediato con WhatsApp para cerrar acuerdos." },
-  { icon: SlidersHorizontal, title: "Búsqueda con Filtros", text: "Filtra por cuartos, baños, precio y mucho más." },
+  {
+    title: "Búsqueda y Filtros Inteligentes",
+    description: "Encuentra tu próximo hogar en segundos. Filtra por precio, ubicación, número de habitaciones y amenidades con un rendimiento ultrarrápido.",
+    icon: Search,
+    className: "md:col-span-2 md:row-span-1 bg-gradient-to-br from-card to-secondary/30",
+    visual: (
+      <div className="absolute right-0 bottom-0 opacity-10 blur-2xl transform translate-x-1/4 translate-y-1/4">
+        <Sparkles className="w-64 h-64 text-primary" />
+      </div>
+    )
+  },
+  {
+    title: "Gestión Sin Fricción",
+    description: "Publica propiedades, sube fotos en alta resolución de manera inteligente y gestiona tus anuncios en una plataforma nativa.",
+    icon: Building2,
+    className: "md:col-span-1 md:row-span-1 bg-card",
+    visual: null
+  },
+  {
+    title: "Seguridad Biométrica",
+    description: "Acceso protegido con tu huella dactilar o FaceID. Tu sesión e información personal siempre a salvo.",
+    icon: Fingerprint,
+    className: "md:col-span-1 md:row-span-1 bg-card",
+    visual: null
+  },
+  {
+    title: "Conexión Inmediata",
+    description: "Recibe notificaciones en tiempo real sobre nuevas propiedades y contacta a los arrendadores directamente vía WhatsApp con un solo clic.",
+    icon: MessageCircle,
+    className: "md:col-span-2 md:row-span-1 bg-gradient-to-tl from-card to-primary/5 border-primary/20",
+    visual: (
+      <div className="absolute right-0 top-0 opacity-5 blur-2xl transform translate-x-1/4 -translate-y-1/4">
+        <Zap className="w-64 h-64 text-primary" />
+      </div>
+    )
+  }
 ];
 
 export const Features = () => {
   return (
-    <section id="funcionalidades" className="py-28">
-      <div className="container">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-            Funcionalidades
-          </p>
-          <h2 className="font-display text-4xl font-bold leading-tight text-ink md:text-5xl">
-            Todo lo que necesitas, <em className="text-primary">nada de lo que sobra.</em>
+    <section id="funcionalidades" className="py-32 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="container relative z-10">
+        <div className="mx-auto max-w-2xl text-center mb-20">
+          <h2 className="font-display text-4xl font-bold leading-tight text-ink md:text-6xl tracking-tight">
+            Diseñado para la <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow">velocidad.</span>
           </h2>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Tecnología nativa pensada para minimizar la fricción y maximizar tu retención.
+          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+            Hemos resumido las herramientas más potentes del mercado inmobiliario en una experiencia fluida, rápida y segura. Todo a un tap de distancia.
           </p>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl gap-6 grid-cols-1 md:grid-cols-3 md:grid-rows-2">
           {features.map((f, i) => (
             <div
               key={f.title}
-              className="group relative overflow-hidden rounded-3xl border border-border bg-card p-7 transition-smooth hover:border-primary/40 hover:shadow-card"
-              style={{ animationDelay: `${i * 0.05}s` }}
+              className={`group relative overflow-hidden rounded-3xl border border-border p-8 md:p-10 transition-smooth hover:border-primary/40 hover:shadow-card flex flex-col justify-between ${f.className}`}
+              style={{ animationDelay: `${i * 0.1}s` }}
             >
-              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/5 transition-smooth group-hover:scale-150 group-hover:bg-primary/10" />
-              <div className="relative">
-                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-glow">
-                  <f.icon className="h-6 w-6" />
+              {f.visual}
+              
+              <div className="relative z-10">
+                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-glow group-hover:scale-110 transition-smooth">
+                  <f.icon className="h-7 w-7" />
                 </div>
-                <h3 className="font-display text-lg font-bold text-ink">{f.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.text}</p>
+                <h3 className="font-display text-2xl font-bold text-ink mb-3">{f.title}</h3>
+                <p className="text-base leading-relaxed text-muted-foreground">{f.description}</p>
               </div>
             </div>
           ))}

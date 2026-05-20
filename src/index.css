@@ -21,22 +21,22 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 35% 12%;
 
-    /* Brand: VIVIA Verde */
-    --primary: 152 68% 42%;
+    /* Brand: VIVIA Blue */
+    --primary: 230 85% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 152 75% 55%;
+    --primary-glow: 230 90% 70%;
 
     /* Dark navy para secciones de contraste */
     --ink: 215 45% 10%;
     --ink-foreground: 0 0% 100%;
 
-    --secondary: 152 30% 95%;
+    --secondary: 230 30% 95%;
     --secondary-foreground: 215 35% 12%;
 
     --muted: 215 20% 96%;
     --muted-foreground: 215 15% 45%;
 
-    --accent: 152 68% 42%;
+    --accent: 230 85% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -44,12 +44,12 @@
 
     --border: 215 20% 90%;
     --input: 215 20% 90%;
-    --ring: 152 68% 42%;
+    --ring: 230 85% 60%;
 
     --radius: 1rem;
 
     /* Gradients */
-    --gradient-hero: radial-gradient(ellipse at top, hsl(152 68% 95%) 0%, hsl(0 0% 100%) 60%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(230 85% 95%) 0%, hsl(0 0% 100%) 60%);
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
     --gradient-ink: linear-gradient(180deg, hsl(215 45% 10%) 0%, hsl(215 50% 7%) 100%);
 
@@ -78,19 +78,19 @@
     --card-foreground: 0 0% 98%;
     --popover: 215 45% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 152 75% 50%;
+    --primary: 230 90% 65%;
     --primary-foreground: 215 45% 8%;
     --secondary: 215 35% 15%;
     --secondary-foreground: 0 0% 98%;
     --muted: 215 35% 15%;
     --muted-foreground: 215 15% 65%;
-    --accent: 152 75% 50%;
+    --accent: 230 90% 65%;
     --accent-foreground: 215 45% 8%;
     --destructive: 0 62.8% 45%;
     --destructive-foreground: 0 0% 98%;
     --border: 215 35% 18%;
     --input: 215 35% 18%;
-    --ring: 152 75% 50%;
+    --ring: 230 90% 65%;
   }
 }
 
