@@ -23,6 +23,7 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           glow: "hsl(var(--primary-glow))",
+          container: "hsl(var(--primary-container))",
         },
         ink: {
           DEFAULT: "hsl(var(--ink))",
@@ -32,6 +33,16 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        "brand-secondary": "hsl(var(--brand-secondary))",
+        tertiary: {
+          DEFAULT: "hsl(var(--tertiary))",
+          foreground: "hsl(var(--tertiary-foreground))",
+        },
+        cta: {
+          DEFAULT: "hsl(var(--cta))",
+          foreground: "hsl(var(--cta-foreground))",
+        },
+        "chat-bubble": "hsl(var(--chat-bubble))",
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -69,8 +80,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },

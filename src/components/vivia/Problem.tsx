@@ -47,17 +47,17 @@ export const Problem = () => {
                
                <AlertCircle className="w-10 h-10 text-primary mb-8 opacity-80" />
                
-               <p className="font-display text-xl md:text-2xl leading-[1.6] text-white/90">
-                 Si Vivia no se construye, el impacto negativo en el sector inmobiliario mexicano <strong className="text-white">seguirá agravándose</strong>, dejando a miles de usuarios vulnerables ante una crisis creciente de fraudes.
+               <p className="font-display text-xl md:text-2xl leading-[1.6] text-white/90 text-justify">
+                 Sin una plataforma como Vivia, el impacto negativo en el sector inmobiliario mexicano <strong className="text-white">seguiría agravándose</strong>, dejando a miles de usuarios vulnerables ante una crisis creciente de fraudes.
                </p>
-               
-               <p className="mt-6 text-base md:text-lg text-white/70 leading-relaxed font-light">
-                 Sin esta plataforma, la proliferación de estafas combinada con publicaciones de baja calidad continuará alimentando un entorno de profunda desconfianza que paraliza las transacciones, alarga los ciclos comerciales y dificulta enormemente la conexión entre propietarios y compradores.
+
+               <p className="mt-6 text-base md:text-lg text-white/70 leading-relaxed font-light text-justify">
+                 La proliferación de estafas, combinada con publicaciones de baja calidad, alimenta un entorno de profunda desconfianza que paraliza las transacciones, alarga los ciclos comerciales y dificulta enormemente la conexión entre propietarios y compradores.
                </p>
-               
+
                <div className="mt-8 pt-8 border-t border-white/10">
-                  <p className="text-lg md:text-xl font-bold text-white leading-relaxed">
-                    Por lo tanto, el proyecto está plenamente justificado: Vivia deja de ser una simple alternativa tecnológica para convertirse en una <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow italic">herramienta de protección urgente y necesaria</span>, diseñada para frenar la pérdida de patrimonio y agilizar la oferta y demanda inmobiliaria.
+                  <p className="text-lg md:text-xl font-bold text-white leading-relaxed text-justify">
+                    Por eso construimos Vivia: no como una simple alternativa tecnológica, sino como una <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow italic">herramienta de protección urgente y necesaria</span>, diseñada para frenar la pérdida de patrimonio y agilizar la oferta y demanda inmobiliaria.
                   </p>
                </div>
             </div>

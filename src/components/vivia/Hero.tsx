@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -13,14 +13,18 @@ export const Hero = () => {
           
           {/* Left Side: Content */}
           <div className="flex flex-col text-left animate-fade-up max-w-2xl">
-            <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-ink md:text-7xl lg:text-[80px]">
-              Encuentra tu <br />
-              hogar <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow italic">sin ruido.</span>
+            <p className="mb-5 inline-flex w-fit items-center gap-2 rounded-full bg-primary-container/60 px-4 py-1.5 text-sm font-semibold text-primary">
+              Hecha en Chiapas, para Chiapas
+            </p>
+            <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-ink md:text-7xl lg:text-[76px]">
+              Renta o vende <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow italic">sin miedo</span> a que<br />
+              te estafen.
             </h1>
 
             <p className="mt-8 text-lg md:text-xl leading-relaxed text-muted-foreground">
-              Adiós al caos de las redes sociales. VIVIA es un entorno exclusivo, seguro y enfocado netamente en lo que importa: 
-              <span className="font-semibold text-ink"> tu próximo inmueble.</span>
+              VIVIA verifica la identidad de cada arrendador y mantiene toda la conversación dentro de la app.
+              <span className="font-semibold text-ink"> Buscar casa deja de ser un acto de fe.</span>
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -40,35 +44,39 @@ export const Hero = () => {
               </Button>
             </div>
             
-            <div className="mt-12 flex items-center gap-4 text-sm text-muted-foreground">
-              <div className="flex -space-x-3">
-                <div className="w-10 h-10 rounded-full bg-secondary border-2 border-background flex items-center justify-center font-bold text-xs">A</div>
-                <div className="w-10 h-10 rounded-full bg-primary/20 border-2 border-background flex items-center justify-center font-bold text-xs text-primary">M</div>
-                <div className="w-10 h-10 rounded-full bg-ink border-2 border-background flex items-center justify-center font-bold text-xs text-white">L</div>
+            <div className="mt-12 flex items-center gap-3 text-sm text-muted-foreground">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-tertiary/10">
+                <ShieldCheck className="h-5 w-5 text-tertiary" />
               </div>
-              <p>+2,000 usuarios ya encontraron su lugar</p>
+              <p>
+                Cada arrendador se verifica con documento oficial y selfie,{" "}
+                <span className="font-semibold text-ink">revisado por una persona real.</span>
+              </p>
             </div>
           </div>
 
           {/* Right Side: Phone Mockups */}
           <div className="relative h-[500px] md:h-[650px] w-full">
+            {/* Grounding shadow beneath the stack */}
+            <div className="absolute left-1/2 bottom-6 -translate-x-1/2 h-10 w-2/3 rounded-full bg-ink/20 blur-2xl" />
+
             {/* Left Phone (Background) */}
-            <PhoneFrame 
-              className="absolute left-0 lg:-left-12 top-20 -rotate-12 scale-[0.85] opacity-60 hover:opacity-100 hover:rotate-0 hover:z-30 transition-all duration-500 ease-out z-10" 
-              image={`${import.meta.env.BASE_URL}Screenshot_20260415-190333.png`} 
+            <PhoneFrame
+              className="absolute left-0 lg:-left-8 top-20 -rotate-6 scale-[0.88] opacity-80 hover:opacity-100 hover:rotate-0 hover:z-30 transition-all duration-500 ease-out z-10"
+              image={`${import.meta.env.BASE_URL}app-chats.jpeg`}
             />
-            
+
             {/* Center Phone (Featured) */}
-            <PhoneFrame 
-              className="absolute left-1/2 -translate-x-1/2 top-0 z-20 shadow-2xl hover:-translate-y-4 transition-all duration-500 ease-out" 
-              image={`${import.meta.env.BASE_URL}Screenshot_20260415-190400.png`} 
-              featured 
+            <PhoneFrame
+              className="absolute left-1/2 -translate-x-1/2 top-0 z-20 hover:-translate-y-4 transition-all duration-500 ease-out"
+              image={`${import.meta.env.BASE_URL}app-home.jpeg`}
+              featured
             />
-            
+
             {/* Right Phone (Background) */}
-            <PhoneFrame 
-              className="absolute right-0 lg:-right-4 top-16 rotate-12 scale-[0.9] opacity-80 hover:opacity-100 hover:rotate-0 hover:z-30 transition-all duration-500 ease-out z-10" 
-              image={`${import.meta.env.BASE_URL}Screenshot_20260415-190408.png`} 
+            <PhoneFrame
+              className="absolute right-0 lg:-right-2 top-16 rotate-6 scale-[0.9] opacity-90 hover:opacity-100 hover:rotate-0 hover:z-30 transition-all duration-500 ease-out z-10"
+              image={`${import.meta.env.BASE_URL}app-notificaciones.jpeg`}
             />
           </div>
 
@@ -89,21 +97,18 @@ const PhoneFrame = ({
 }) => (
   <div className={`group ${className}`} style={{ animationDelay: featured ? "0s" : "0.5s" }}>
     <div
-      className={`mx-auto aspect-[9/19] w-full max-w-[260px] md:max-w-[300px] overflow-hidden rounded-[2.5rem] md:rounded-[3rem] border-8 md:border-[10px] border-ink bg-card shadow-[0_20px_50px_-12px_rgba(0,0,0,0.2)] ${
+      className={`mx-auto aspect-[9/19] w-full max-w-[260px] md:max-w-[300px] overflow-hidden isolate rounded-[2.5rem] md:rounded-[3rem] border-8 md:border-[10px] border-ink bg-card shadow-[0_20px_50px_-12px_rgba(0,0,0,0.2)] ${
         featured ? "ring-4 ring-primary/20" : ""
       } transform-gpu`}
     >
       <div className="absolute top-0 inset-x-0 h-6 bg-ink rounded-b-3xl w-1/2 mx-auto z-50 flex justify-center items-center gap-2">
         <div className="w-12 h-1.5 bg-background/20 rounded-full" />
       </div>
-      <img 
-        src={image} 
-        alt="Vivia App Screenshot" 
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+      <img
+        src={image}
+        alt="Vivia App Screenshot"
+        className="h-full w-full rounded-[1.9rem] md:rounded-[2.3rem] object-cover transition-transform duration-700 group-hover:scale-105"
       />
     </div>
-    {featured && (
-      <div className="absolute -inset-20 -z-10 rounded-full bg-primary/20 blur-[80px]" />
-    )}
   </div>
 );

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Apple, Smartphone } from "lucide-react";
+import { Smartphone } from "lucide-react";
 
 export const CTA = () => {
   return (
@@ -19,22 +19,17 @@ export const CTA = () => {
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="h-14 gap-2 rounded-full bg-ink px-8 text-base font-semibold text-ink-foreground hover:bg-ink/90"
-              >
-                <Apple className="h-5 w-5" />
-                App Store
-              </Button>
-              <Button
-                size="lg"
-                variant="secondary"
-                className="h-14 gap-2 rounded-full bg-white px-8 text-base font-semibold text-ink hover:bg-white/90"
-              >
-                <Smartphone className="h-5 w-5" />
-                Google Play
-              </Button>
+              {/* TODO: reemplazar "#" por el link real de la ficha de VIVIA en Google Play */}
+              <a href="#">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="h-14 gap-2 rounded-full bg-white px-8 text-base font-semibold text-ink hover:bg-white/90"
+                >
+                  <Smartphone className="h-5 w-5" />
+                  Google Play
+                </Button>
+              </a>
             </div>
           </div>
         </div>

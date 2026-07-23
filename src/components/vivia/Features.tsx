@@ -1,83 +1,136 @@
-import {
-  Fingerprint,
-  Search,
-  MessageCircle,
-  Building2,
-  Sparkles,
-  ShieldCheck,
-  Zap,
-} from "lucide-react";
+import { ShieldCheck, Sparkles, MapPin, CheckCircle2 } from "lucide-react";
+import { ChatDemo } from "./ChatDemo";
 
-const features = [
+const Screenshot = ({ src, alt }: { src: string; alt: string }) => (
+  <div className="relative mx-auto w-full max-w-[300px]">
+    <div className="aspect-[9/19] w-full overflow-hidden isolate rounded-[2.5rem] border-8 border-ink bg-card shadow-card">
+      <img src={src} alt={alt} className="h-full w-full rounded-[2rem] object-cover" loading="lazy" />
+    </div>
+  </div>
+);
+
+type Story = {
+  eyebrow: string;
+  title: React.ReactNode;
+  body: string;
+  bullets: string[];
+  icon: typeof ShieldCheck;
+  accent: string;
+  badge?: string;
+  visual: React.ReactNode;
+};
+
+const stories: Story[] = [
   {
-    title: "Búsqueda y Filtros Inteligentes",
-    description: "Encuentra tu próximo hogar en segundos. Filtra por precio, ubicación, número de habitaciones y amenidades con un rendimiento ultrarrápido.",
-    icon: Search,
-    className: "md:col-span-2 md:row-span-1 bg-gradient-to-br from-card to-secondary/30",
-    visual: (
-      <div className="absolute right-0 bottom-0 opacity-10 blur-2xl transform translate-x-1/4 translate-y-1/4">
-        <Sparkles className="w-64 h-64 text-primary" />
-      </div>
-    )
+    eyebrow: "Contra las estafas",
+    title: <>Aquí sabes con quién <span className="text-tertiary">estás hablando.</span></>,
+    body: "Cada arrendador puede verificar su identidad con su INE o licencia y una selfie. Una persona del equipo de VIVIA lo revisa — no un robot — y solo entonces recibe su insignia de verificado, visible en su perfil y en cada publicación.",
+    bullets: [
+      "Insignia de verificado en perfil y publicaciones",
+      "Revisión humana, caso por caso",
+      "Si algo no cuadra, repórtalo con un toque",
+    ],
+    icon: ShieldCheck,
+    accent: "bg-tertiary text-white",
+    visual: <Screenshot src={`${import.meta.env.BASE_URL}app-verificacion.jpeg`} alt="Verificación de identidad en VIVIA" />,
   },
   {
-    title: "Gestión Sin Fricción",
-    description: "Publica propiedades, sube fotos en alta resolución de manera inteligente y gestiona tus anuncios en una plataforma nativa.",
-    icon: Building2,
-    className: "md:col-span-1 md:row-span-1 bg-card",
-    visual: null
+    eyebrow: "Contra los anuncios pobres",
+    title: <>Tu propiedad, presentada como <span className="text-transparent bg-clip-text bg-gradient-premium">se merece.</span></>,
+    body: "Llena los datos de tu propiedad y deja que la inteligencia artificial redacte por ti un título atractivo y una descripción profesional. La ves escribirse en tiempo real, lista para publicar.",
+    bullets: [
+      "Título y descripción profesionales en segundos",
+      "Publicación guiada en 4 pasos, con vista previa final",
+      "Fotos organizadas por espacio: sala, cocina, recámara…",
+    ],
+    icon: Sparkles,
+    accent: "bg-gradient-premium text-ink",
+    badge: "Premium",
+    visual: <Screenshot src={`${import.meta.env.BASE_URL}app-ia-componiendo.jpeg`} alt="La IA de VIVIA componiendo el título y la descripción de una propiedad" />,
   },
   {
-    title: "Seguridad Biométrica",
-    description: "Acceso protegido con tu huella dactilar o FaceID. Tu sesión e información personal siempre a salvo.",
-    icon: Fingerprint,
-    className: "md:col-span-1 md:row-span-1 bg-card",
-    visual: null
+    eyebrow: "Contra la comunicación rota",
+    title: <>Habla directo, sin dar tu <span className="text-chat-bubble">número.</span></>,
+    body: "El chat vive dentro de la app: sabes si tu mensaje llegó y si lo leyeron. Y si tu internet falla, los mensajes se guardan y se envían solos cuando vuelve la conexión.",
+    bullets: [
+      "Confirmación de entregado y leído",
+      "Funciona aunque se vaya el internet",
+      "Notificaciones solo cuando importan",
+    ],
+    icon: CheckCircle2,
+    accent: "bg-chat-bubble text-white",
+    visual: <ChatDemo />,
   },
   {
-    title: "Conexión Inmediata",
-    description: "Recibe notificaciones en tiempo real sobre nuevas propiedades y contacta a los arrendadores directamente vía WhatsApp con un solo clic.",
-    icon: MessageCircle,
-    className: "md:col-span-2 md:row-span-1 bg-gradient-to-tl from-card to-primary/5 border-primary/20",
-    visual: (
-      <div className="absolute right-0 top-0 opacity-5 blur-2xl transform translate-x-1/4 -translate-y-1/4">
-        <Zap className="w-64 h-64 text-primary" />
-      </div>
-    )
-  }
+    eyebrow: "Contra la búsqueda a ciegas",
+    title: <>Lo que hay cerca de ti, <span className="text-primary">en el mapa.</span></>,
+    body: "Filtra por precio, área, habitaciones y baños. La sección \"Cerca de ti\" usa tu ubicación para mostrarte lo que hay en tu zona, y cada propiedad viene con su ubicación exacta en un mapa hecho para Chiapas.",
+    bullets: [
+      "Filtros útiles y orden por precio",
+      "\"Cerca de ti\" con tu ubicación real",
+      "Pin exacto en el mapa — sin adivinar la zona",
+    ],
+    icon: MapPin,
+    accent: "bg-gradient-primary text-white",
+    visual: <Screenshot src={`${import.meta.env.BASE_URL}app-busqueda.jpeg`} alt="Búsqueda con filtros en VIVIA" />,
+  },
 ];
 
 export const Features = () => {
   return (
-    <section id="funcionalidades" className="py-32 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
-
+    <section id="funcionalidades" className="py-28 md:py-32 relative overflow-hidden">
       <div className="container relative z-10">
-        <div className="mx-auto max-w-2xl text-center mb-20">
+        <div className="mx-auto max-w-2xl text-center mb-24">
           <h2 className="font-display text-4xl font-bold leading-tight text-ink md:text-6xl tracking-tight">
-            Diseñado para la <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow">velocidad.</span>
+            Cada problema, <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-glow">resuelto.</span>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Hemos resumido las herramientas más potentes del mercado inmobiliario en una experiencia fluida, rápida y segura. Todo a un tap de distancia.
+            VIVIA no es un tablón de anuncios más: cada parte de la app existe para eliminar un riesgo real de rentar o comprar en línea.
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-5xl gap-6 grid-cols-1 md:grid-cols-3 md:grid-rows-2">
-          {features.map((f, i) => (
+        <div className="mx-auto flex max-w-6xl flex-col gap-24 md:gap-32">
+          {stories.map((story, i) => (
             <div
-              key={f.title}
-              className={`group relative overflow-hidden rounded-3xl border border-border p-8 md:p-10 transition-smooth hover:border-primary/40 hover:shadow-card flex flex-col justify-between ${f.className}`}
-              style={{ animationDelay: `${i * 0.1}s` }}
+              key={story.eyebrow}
+              className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20"
             >
-              {f.visual}
-              
-              <div className="relative z-10">
-                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-primary text-primary-foreground shadow-glow group-hover:scale-110 transition-smooth">
-                  <f.icon className="h-7 w-7" />
+              {/* Text */}
+              <div className={i % 2 === 1 ? "lg:order-2" : ""}>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className={`flex h-11 w-11 items-center justify-center rounded-xl shadow-soft ${story.accent}`}>
+                    <story.icon className="h-5 w-5" />
+                  </div>
+                  <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+                    {story.eyebrow}
+                  </p>
+                  {story.badge && (
+                    <span className="rounded-full bg-gradient-premium px-3 py-1 text-xs font-semibold text-ink">
+                      {story.badge}
+                    </span>
+                  )}
                 </div>
-                <h3 className="font-display text-2xl font-bold text-ink mb-3">{f.title}</h3>
-                <p className="text-base leading-relaxed text-muted-foreground">{f.description}</p>
+
+                <h3 className="font-display text-3xl md:text-4xl font-bold leading-[1.15] text-ink tracking-tight">
+                  {story.title}
+                </h3>
+                <p className="mt-5 text-lg leading-relaxed text-muted-foreground text-justify">
+                  {story.body}
+                </p>
+
+                <ul className="mt-7 space-y-3">
+                  {story.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-3 text-ink/90">
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Visual */}
+              <div className={i % 2 === 1 ? "lg:order-1" : ""}>
+                {story.visual}
               </div>
             </div>
           ))}
